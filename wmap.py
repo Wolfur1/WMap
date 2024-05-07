@@ -14,11 +14,10 @@ class wmap():
         self.replacement = 0
 
     def isOutOfMap(self, y = 0, x = 0):
-        if y > self.size_y-1 or x > self.size_x-1 or str(y)[0] == "-" or str(x)[0] == "-":
+        if y > self.size_y-1 or x > self.size_x-1 or y<0 or x<0:
             return True
         else:
             return False
-
 
     #Find the position of the cursor
     def findCursorPos(self, cursor) -> list:
