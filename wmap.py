@@ -1,5 +1,4 @@
 
-
 class wmap():
 
     """
@@ -28,7 +27,7 @@ class wmap():
         if not replacement: replacement = self.replacement
         y = self.cursor_pos[0] + movement[0]
         x = self.cursor_pos[1] + movement[1]
-        if y > self.size_y-1 or x > self.size_x-1:
+        if y > self.size_y-1 or x > self.size_x-1 or str(y)[0] == "-" or str(x)[0] == "-":
             return self.board
         self.board[self.cursor_pos[0]][self.cursor_pos[1]] = replacement
         self.board[y][x] = self.cursor
@@ -48,7 +47,7 @@ class wmap():
         if not replacement: replacement = self.replacement
         y = object_pos[0] + movement[0]
         x = object_pos[1] + movement[1]
-        if y > self.size_y-1 or x > self.size_x-1:
+        if y > self.size_y-1 or x > self.size_x-1 or str(y)[0] == "-" or str(x)[0] == "-":
             return 1
         self.board[object_pos[0]][object_pos[1]] = replacement
         self.board[y][x] = object_visualiser
@@ -64,7 +63,7 @@ class wmap():
 
     def delete(self, pos:list) -> int | str:
         if not pos: return "Was not able to find position"
-        if pos[0] > self.size_y-1 or pos[1] > self.size_x-1:
+        if y > self.size_y-1 or x > self.size_x-1 or str(y)[0] == "-" or str(x)[0] == "-":
             return "Out of board"
         self.board[pos[0]][pos[1]] = self.replacement
         return 0
